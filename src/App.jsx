@@ -1,22 +1,26 @@
 import { useState } from 'react'
-import Grupo from './components/Grupo';
-import Login from './components/Login';
+import Principal from './components/Principal.jsx'
+import Login from './components/Login.jsx'
+
 
 
 
 function App() {
-const [isValid, setIsValid] = useState(false);
+
+  const [isValid, setIsValid] = useState(false);
+  const [chats, setChats] = useState([]);
+
 
 
   return (
-    <div className='container mx-auto mt-10'>
+    <div>
       {/* {!isValid && 
           <Login
             setIsValid={setIsValid}
           />} */}
 
       {isValid ? (
-        <Grupo />
+        <Principal />
       ) : (
         <Login 
           setIsValid={setIsValid}/>
