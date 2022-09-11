@@ -34,16 +34,12 @@ const handleSubmit = e => {
 
   return (
 
-    <div className='container mx-auto mt-10'>
-        <div className='md:w-2/3 lg:w-2/5 mx-auto px-5'> 
+    <div className='container mx-auto mt-10 flex h-screen justify-center items-center'>
+        <div className='md:w-2/3 lg:w-2/5 mx-auto px-5 '> 
             <img src={Logo} className='mx-auto mb-10' alt="Logo" />
-            <h1 className='text-sky-600 font-black text-6xl capitalize text-center'>
-            Inicia Sesión y Accede a tus {''}
-                <span className='text-slate-700'>clases!</span>
-            </h1>
 
             <form 
-                className='my-10 bg-white shadow rounded-lg p-10 '
+                className='my-10 bg-white shadow rounded-lg p-10'
                 onSubmit={handleSubmit}
             >
             {error && <Error><p>El campo de Correo es obligatorio</p></Error>}

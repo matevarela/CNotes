@@ -7,7 +7,7 @@ const Chat = () => {
         <img src={Profe} className='mr-2 w-12 h-12 rounded-sm' alt="Foto de Perfil" />
         <div>
             <h4 className='text-1xl font-semibold'>Sistemas Operativos 4to</h4>
-            <p className='text-xs'>JRGUTIERREZ@ITEL.EDU.AR</p>
+            <p className='text-xs font-semibold'>JRGUTIERREZ@ITEL.EDU.AR</p>
         </div>
     </div>
   )
