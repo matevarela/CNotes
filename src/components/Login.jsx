@@ -34,25 +34,25 @@ const handleSubmit = e => {
 
   return (
 
-    <div className='container mx-auto mt-10 flex h-screen justify-center items-center'>
-        <div className='md:w-2/3 lg:w-2/5 mx-auto px-5 '> 
-            <img src={Logo} className='mx-auto mb-10' alt="Logo" />
+    <div className='h-screen m-auto'>
+        <div className='w-full max-w-xl m-auto'> 
+            <img src={Logo} className='mx-auto py-10 px-5' alt="Logo" />
 
             <form 
-                className='my-10 bg-white shadow rounded-lg p-10'
+                className='py-10 mx-5 bg-white shadow rounded-lg p-10'
                 onSubmit={handleSubmit}
             >
             {error && <Error><p>El campo de Correo es obligatorio</p></Error>}
                 <div className='my-5'>
                     <label 
-                        className='uppercase text-gray-600 block text-xl font-bold'
+                        className='uppercase text-slate-600 block text-xl font-bold'
                         htmlFor='email'
                     >Email
                     </label>
                     <input 
                         type="email"
                         placeholder='Email de Registro'
-                        className='w-full mt-3 p-3 border rounded-xl bg-gray-50'
+                        className='w-full mt-3 p-3 border rounded-md bg-slate-50'
                         id='email'
                         value={email}
                         onChange={ (e) => setEmail(e.target.value)}
@@ -61,14 +61,14 @@ const handleSubmit = e => {
 
                 <div className='my-5'>
                     <label 
-                        className='uppercase text-gray-600 block text-xl font-bold'
+                        className='uppercase text-slate-600 block text-xl font-bold'
                         htmlFor='password'
                     >Password de Admin
                     </label>
                     <input 
                         type="password"
                         placeholder='Password'
-                        className='w-full mt-3 p-3 border rounded-xl bg-gray-50'
+                        className='w-full mt-3 p-3 border rounded-md bg-slate-50'
                         id='password'
                         value={password}
                         onChange={ (e) => setPassword(e.target.value)}
@@ -92,8 +92,7 @@ const handleSubmit = e => {
                 <input
                     type='submit'
                     value='Iniciar Sesión'
-                    className='bg-sky-700 mb-5  w-full py-3 text-white uppercase font-bold rounded 
-                    hover:cursor-pointer hover:bg-sky-800 transition-colors' 
+                    className='bg-sky-600 mb-5  w-full py-3 text-slate-200 uppercase font-bold rounded-md hover:cursor-pointer hover:bg-sky-700 transition-colors' 
                 />
             </form>
         </div>
