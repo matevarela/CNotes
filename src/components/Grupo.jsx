@@ -7,11 +7,11 @@ const Grupo = () => {
     const [profesor, setProfesor] = useState('jrgutierrez@itel.edu.ar');
     
   return (
-    <div className='mx-auto rounded-xl h-screen md:w-2/3 -z-10'>
-    <Barra
-      grupo={grupo} 
-      profesor={profesor}
-    />
+    <div className='hidden sm:visible mx-auto rounded-xl h-screen sm:w-2/3 -z-10'>
+        <Barra
+          grupo={grupo} 
+          profesor={profesor}
+        />
 
         <h1 className='uppercase text-center font-bold text-2xl pt-10'>Tu profesor no ha publicado nada aún.</h1>
     </div>
