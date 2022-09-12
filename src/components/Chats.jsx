@@ -8,7 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import Buscador from './Buscador'
 
-const Chats = ({setNuevaClase}) => {
+const Chats = ({setNuevaClase, chats, setChats}) => {
   
   const botonNuevaClase = () => {
    setNuevaClase(true);
@@ -17,7 +17,7 @@ const Chats = ({setNuevaClase}) => {
   return (
     <div className='w-full md:w-1/3'>
         {/* ----- bloque ----- */}
-        <div className='flex items-center justify-between p-5 shadow-md md:w-1/3 fixed z-10 bg-slate-900'>
+        <div className=' w-full flex items-center justify-between p-5 shadow-md md:w-1/3 fixed z-10 bg-slate-900'>
           {/* perfil */}
           <a href="">
             <img src={Perfil} alt="Imagen de Perfil" className='h-12 rounded-full'/>
@@ -36,19 +36,11 @@ const Chats = ({setNuevaClase}) => {
           {/* buscador */}
           <Buscador/>
           {/* clases */}
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
-          <Chat />
+          { chats.length > 0 ? 
+              chats.map( (chat) => (<Chat />)
+            ) :
+                <h3 className='uppercase text-center font-bold text-2xl pt-10 text-slate-200'>Acá Aparecerán tus Clases.</h3> 
+              }
         </div>
     </div>
   )

@@ -8,7 +8,7 @@ const Grupo = () => {
     const [profesor, setProfesor] = useState('jrgutierrez@itel.edu.ar');
     
   return (
-    <div className='mx-auto h-screen md:w-2/3 -z-10 bg-slate-800 border-l-2 border-slate-900'>
+    <div className='mx-auto md:w-2/3 z-10 bg-slate-800 border-l-2 border-slate-900'>
       <Barra
         grupo={grupo} 
         profesor={profesor}

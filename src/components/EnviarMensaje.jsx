@@ -9,8 +9,8 @@ const EnviarMensaje = () => {
             <FontAwesomeIcon icon={faPaperclip} className='mr-5 h-5'/>
 
             <div className='bg-slate-800 rounded-full h-10 flex content-between items-center w-7/12'>
-                <input type="text" id="mensaje" placeholder='Escribir Mensaje' className='ml-5 w-full mr-5 bg-slate-800'/>
-                <button type='button' className='bg-sky-500 h-full w-20 flex items-center rounded-full cursor-pointer'>
+                <input type="text" id="mensaje" placeholder='Escribir Mensaje' className='ml-5 w-full mr-5 bg-slate-800 outline-none'/>
+                <button type='button' className='bg-sky-500 h-full w-20 flex items-center rounded-full hover:cursor-pointer '>
                     <FontAwesomeIcon icon={faEnvelope} className='h-5 m-auto'/>
                 </button>
             </div>

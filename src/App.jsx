@@ -7,6 +7,8 @@ function App() {
 
   const [isValid, setIsValid] = useState(false);
   const [chats, setChats] = useState([]);
+  const [usuario, setUsuario] = useState([]);
+
 
   return (
     <div>
@@ -16,7 +18,11 @@ function App() {
           />} */}
 
       {isValid ? (
-        <Principal />
+        <Principal 
+          chats={chats}
+          setChats={setChats}
+          
+        />
       ) : (
         <Login 
           setIsValid={setIsValid}/>
