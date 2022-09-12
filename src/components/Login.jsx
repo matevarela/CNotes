@@ -4,10 +4,11 @@ import 'animate.css'
 import Logo from '../img/logo.png';
 import Error from './Error';
 
-const Login = ( {setIsValid} ) => {
+const Login = ( {setIsValid, setUsuario} ) => {
 const [error, setError] = useState(false);
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [profesor, setProfesor] = useState(false);
 
 const handleSubmit = e => {
     e.preventDefault();
@@ -23,14 +24,16 @@ const handleSubmit = e => {
         return;
     } else {
         setIsValid(true)
+
+        // Creando objeto de usuario
+        const usuario = {
+        email,
+        profesor,
+    }
     }
 }    
 
-    // Iniciando sesión
-    const usuario = {
-        email,
-        password
-    }
+
 
   return (
 

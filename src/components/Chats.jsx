@@ -7,7 +7,7 @@ import Chat from './Chat'
 
 
 
-const Chats = ({setNuevaClase}) => {
+const Chats = ({setNuevaClase, chats, setChats}) => {
   
   const botonNuevaClase = () => {
    setNuevaClase(true);
@@ -29,20 +29,11 @@ const Chats = ({setNuevaClase}) => {
               <input type="text" placeholder='Buscar Clase' className='w-full p-2 rounded-md my-2'/>
             </div>
         </div>
-        
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
+      
+      { chats.length > 0 ? 
+        chats.map( (chat) => (<Chat />)
+        ) : <h3 className='text-3xl grid text-center items-center'>Acá Aparecerán tus Clases.</h3>} 
+
     </div>
   )
 }

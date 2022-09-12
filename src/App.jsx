@@ -7,6 +7,39 @@ function App() {
 
   const [isValid, setIsValid] = useState(false);
   const [chats, setChats] = useState([]);
+  const [usuario, setUsuario] = useState([]);
+
+  const clases = {
+    matematica : {
+      password : 'matematica',
+      nombre : 'Matemáticas',
+      profesor : 'profematematica@gmail.com'
+    },
+
+    fisica : {
+      password : 'fisica',
+      nombre : 'Física',
+      profesor : 'profefisica@gmail.com'
+    },
+
+    literatura : {
+      password : 'literatura',
+      nombre : 'Literatura',
+      profesor : 'profeliteratura@gmail.com'
+    },
+
+    artistica : {
+      password : 'artistica',
+      nombre : 'Artística',
+      profesor : 'profeartistica@gmail.com'
+    },
+
+    ciudadania : {
+      password : 'ciudadania',
+      nombre : 'Ciudadanía',
+      profesor : 'profeciudadania@gmail.com'
+    },
+  }
 
   return (
     <div>
@@ -16,10 +49,15 @@ function App() {
           />} */}
 
       {isValid ? (
-        <Principal />
+        <Principal
+          chats={chats}
+          setChats={setChats}
+        />
       ) : (
         <Login 
-          setIsValid={setIsValid}/>
+          setIsValid={setIsValid}
+          setUsuario={setUsuario}  
+        />
       )}
     </div>
 

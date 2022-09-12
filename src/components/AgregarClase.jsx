@@ -6,6 +6,9 @@ const AgregarClase = ({setNuevaClase}) => {
     setNuevaClase(false)
   }
 
+
+  
+
   return (
     <div className='h-screen w-full bg-black flex bg-opacity-20 justify-center items-center z-10 text-center absolute'>
         <div className='bg-gray-700 py-5 px-8 rounded-sm'>
