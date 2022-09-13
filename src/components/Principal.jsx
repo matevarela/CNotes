@@ -3,7 +3,7 @@ import AgregarClase from './AgregarClase.jsx'
 import Chats from './Chats.jsx'
 import Grupo from './Grupo.jsx'
 
-const Principal = ({chats, setChats}) => {
+const Principal = ({chats, setChats, error, setError}) => {
   const [nuevaClase, setNuevaClase] = useState(false)
 
   return (
@@ -20,6 +20,8 @@ const Principal = ({chats, setChats}) => {
               setNuevaClase={setNuevaClase}
               chats={chats}
               setChats={setChats}
+              error={error}
+              setError={setError}
           /> }
         </div>
 

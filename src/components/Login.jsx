@@ -4,8 +4,7 @@ import 'animate.css'
 import Logo from '../img/logo.png';
 import Error from './Error';
 
-const Login = ( {setIsValid} ) => {
-const [error, setError] = useState(false);
+const Login = ( {setIsValid, error, setError} ) => {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 

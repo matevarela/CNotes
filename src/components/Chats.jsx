@@ -37,7 +37,11 @@ const Chats = ({setNuevaClase, chats, setChats}) => {
           <Buscador/>
           {/* clases */}
           { chats.length > 0 ? 
-              chats.map( (chat) => (<Chat />)
+              chats.map( (chat, index) => 
+                (<Chat 
+                  key={index}
+                  chat={chat}
+                />)
             ) :
                 <h3 className='uppercase text-center font-bold text-2xl pt-10 text-slate-200'>Acá Aparecerán tus Clases.</h3> 
               }

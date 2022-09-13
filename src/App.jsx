@@ -8,6 +8,7 @@ function App() {
   const [isValid, setIsValid] = useState(false);
   const [chats, setChats] = useState([]);
   const [usuario, setUsuario] = useState([]);
+  const [error, setError] = useState(false);
 
 
   return (
@@ -21,11 +22,15 @@ function App() {
         <Principal 
           chats={chats}
           setChats={setChats}
-          
+          error={error}
+          setError={setError}
         />
       ) : (
         <Login 
-          setIsValid={setIsValid}/>
+          setIsValid={setIsValid}
+          error={error}
+          setError={setError}
+        />
       )}
     </div>
 
