@@ -9,7 +9,8 @@ function App() {
   const [chats, setChats] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [error, setError] = useState(false);
-
+  const [aviso, setAviso] = useState(false);
+  
 
   return (
     <div>
@@ -24,6 +25,8 @@ function App() {
           setChats={setChats}
           error={error}
           setError={setError}
+          aviso={aviso}
+          setAviso={setAviso}
         />
       ) : (
         <Login 

@@ -1,0 +1,35 @@
+{
+    "clases" : [
+        {
+            "id" : 1,
+            "descripcion" : "Matemática",
+            "contraseña" : "matematica",
+            "profesor" : "profematematica@gmail.com"
+        },
+        {
+            "id" : 2,
+            "descripcion" : "Literatura",
+            "contraseña" : "literatura",
+            "profesor" : "profeliteratura@gmail.com"
+        },
+        {
+            "id" : 3,
+            "descripcion" : "Física",
+            "contraseña" : "fisica",
+            "profesor" : "profefisica@gmail.com"
+        },
+        {
+            "id" : 4,
+            "descripcion" : "Ciudadanía",
+            "contraseña" : "ciudadania",
+            "profesor" : "profeciudadania@gmail.com"
+        },
+        {
+            "id" : 5,
+            "descripcion" : "Artística",
+            "contraseña" : "artistica",
+            "profesor" : "profeartistica@gmail.com"
+        }
+    ]
+    
+}
