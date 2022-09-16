@@ -9,6 +9,8 @@ import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import Buscador from './Buscador'
 
 const Chats = ({setNuevaClase, chats, setChats}) => {
+
+  const [perfilMenu, setPerfilMenu] = useState(false)
   
   const botonNuevaClase = () => {
    setNuevaClase(true);
