@@ -12,7 +12,25 @@ const Perfil = ({ perfilMenu, setPerfilMenu }) => {
           <h3 className='text-sky-500 font-bold text-4xl text-center mt-8 mx-5'>Dylan Santillán</h3>
           <h4 className='text-slate-200 font-normal text-2xl text-center mt-3 mx-5'>Instituto Técnico Dr. Emilio Lamarca</h4>
         </div>
+
+
         <div className='pb-10 grid md:m-0 md:grid-cols-2 lg:flex lg:flex-col'>
+          
+        <div>
+            <h4 className='text-sky-500 font-semibold text-3xl text-center mx-5 mb-10'>DATOS ESCOLARES</h4>
+          <div className='w-full bg-slate-900 rounded-lg h-64 grid grid-rows-2'>
+            <p className='text-slate-200 font-semibold text-9xl mx-5 text-center mt-10'>17</p>
+            <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3 text-center self-end mb-5'>INASISTENCIAS</h6>
+          </div>
+            <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3'>MATERIAS:</h6>
+            <p className='text-slate-200 font-semibold text-xl mx-5'>10</p>
+            <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3'>PREVIAS</h6>
+            <p className='text-slate-200 font-semibold text-xl mx-5'>3</p>
+            <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3'>LLAMADOS DE ATENCIÓN:</h6>
+            <p className='text-slate-200 font-semibold text-xl mx-5'>2</p>
+            
+          </div>
+
           <div>
             <h4 className='text-sky-500 font-semibold text-3xl text-center mx-5 mb-10'>DATOS PERSONALES</h4>
             <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3'>CURSO:</h6>
