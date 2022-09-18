@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import Logo from '../img/logoLetras.png'
-import PerfilFoto from '../img/icon.jpg'
+import PerfilFoto from '../img/fotoPerfil.jpg'
 import Options from '../img/options.svg'
 import Chat from './Chat'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
