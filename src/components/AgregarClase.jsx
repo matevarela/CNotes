@@ -15,37 +15,40 @@ const AgregarClase = ({setNuevaClase, chats, setChats, error, setError, aviso, s
       const json = await response.text()
 
       // Consultar si ya está esa clase agregada a los chats
-      chats.forEach( chat => {
-        if(chat.contraseña === codigo) {
-          setAviso(true)
-          setTimeout(() => {
-            setAviso(false)
-          }, 3000)
-          return; // Para detener la ejecución
-        } 
-      })
-
-    // Validando nuevo código
-    JSON.parse(json).clases.forEach( clase => {  
-      if(clase.contraseña === codigo) {
-          // Armando objeto de nueva clase
-          const nuevoChat = {
-            id : clase.id,
-            nombre : clase.descripcion,
-            profesor : clase.profesor,
-            contraseña : clase.contraseña
+      const repeat = chats.map( chat => chat.contraseña === codigo)
+      console.log(repeat.length)
+      console.log(repeat)
+      
+      // Validando nuevo código
+      if(repeat.length === 0) { 
+        JSON.parse(json).clases.forEach( clase => {  
+          if(clase.contraseña === codigo) {
+              // Armando objeto de nueva clase
+              const nuevoChat = {
+                id : clase.id,
+                nombre : clase.descripcion,
+                profesor : clase.profesor,
+                contraseña : clase.contraseña
+              }
+              setChats([...chats, nuevoChat]) // Agrega nueva clase a los chats
+              cerrarModal()
+              return;
+          } else {
+              console.log(`El código no coincide con ${clase.descripcion}`)
           }
-          setChats([...chats, nuevoChat]) // Agrega nueva clase a los chats
-          cerrarModal()
-          return;
+        })
+        setError(true)
+        setTimeout(() => {
+          setError(false)
+        }, 3000)
+
       } else {
-          console.log(`El código no coincide con ${clase.descripcion}`)
+        setAviso(true)
+        setTimeout(() => {
+          setAviso(false)
+        }, 3000)
+
       }
-    })
-    setError(true)
-    setTimeout(() => {
-      setError(false)
-    }, 3000)
   }
 
   const validarPassword = () => {
