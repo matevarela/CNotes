@@ -9,24 +9,20 @@ const AgregarClase = ({setNuevaClase, chats, setChats, error, setError, aviso, s
 
   const [codigo, setCodigo] = useState('');
 
-  // Consultando clases
-  async function obtenerDatos() {
-      const response = await fetch('http://127.0.0.1:5173/src/clases.json')
-      const json = await response.text()
+  // Funciones
+  const cerrarModal = () => {
+    setNuevaClase(false)
+    setError(false)
+  }
 
-      // Consultar si ya está esa clase agregada a los chats
-      chats.forEach( chat => {
-        if(chat.contraseña === codigo) {
-          setAviso(true)
-          setTimeout(() => {
-            setAviso(false)
-          }, 3000)
-          return; // Para detener la ejecución
-        } 
-      })
+   async function validarPassword() { 
+
+    //Consultando las clases
+    const response = await fetch('http://127.0.0.1:5173/src/clases.json')
+    const json = await response.text()
 
     // Validando nuevo código
-    JSON.parse(json).clases.forEach( clase => {  
+    const valido = JSON.parse(json).clases.map( clase => {  
       if(clase.contraseña === codigo) {
           // Armando objeto de nueva clase
           const nuevoChat = {
@@ -36,36 +32,19 @@ const AgregarClase = ({setNuevaClase, chats, setChats, error, setError, aviso, s
             contraseña : clase.contraseña
           }
           setChats([...chats, nuevoChat]) // Agrega nueva clase a los chats
+          console.log(chats)
           cerrarModal()
-          return;
-      } else {
-          console.log(`El código no coincide con ${clase.descripcion}`)
+          return clase.contraseña
       }
     })
-    setError(true)
-    setTimeout(() => {
-      setError(false)
-    }, 3000)
-  }
 
-  const validarPassword = () => {
-    
-    if(codigo === '') { // Está vacío
+    if(!codigo || valido.length === 0 ) { // Está vacío
       setError(true)
       setTimeout(() => {
         setError(false)
       }, 3000)
       return;
-
-    } else {
-        // Validando password
-        obtenerDatos()
       }
-    }
-
-    const cerrarModal = () => {
-      setNuevaClase(false)
-      setError(false)
     }
 
   return (
