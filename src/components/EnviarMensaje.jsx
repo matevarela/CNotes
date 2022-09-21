@@ -5,7 +5,7 @@ import {faPaperclip, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 const EnviarMensaje = ({ mensajeTexto, setMensajeTexto }) => {
   
   const botonEnviar = () => {
-    console.log('Enviando...')
+    console.log('Enviando mensaje...')
   }
 
   return (
