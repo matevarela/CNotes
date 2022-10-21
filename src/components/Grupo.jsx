@@ -7,10 +7,10 @@ import ModalComunicado from './ModalComunicado.jsx'
 import { generarId } from '../helpers/helpers.js'
 /* import ListadoMensajes from './ListadoMensajes.jsx' */
 
-const Grupo = () => {
+const Grupo = ({ error, setError}) => {
     const [grupo, setGrupo] = useState('Sistemas Operativos 4to');
     const [profesor, setProfesor] = useState('jrgutierrez@itel.edu.ar');
-    /* const [mensajeTexto, setMensajeTexto] = useState('') */
+    const [mensajeTexto, setMensajeTexto] = useState('')
     const [comunicadoModal, setComunicadoModal ] = useState(false)
 /* 
     const guardarMensaje = mensaje => {
@@ -38,6 +38,8 @@ const Grupo = () => {
         <ModalComunicado
           comunicadoModal={comunicadoModal}
           setComunicadoModal={setComunicadoModal}
+          error={error}
+          setError={setError}
         />
     </div>
   )

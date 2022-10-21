@@ -14,7 +14,10 @@ const Principal = ({chats, setChats, error, setError}) => {
             chats={chats}
             setChats={setChats}
           />
-          <Grupo />
+          <Grupo 
+              error={error}
+              setError={setError}
+          />
           {nuevaClase && 
           <AgregarClase
               setNuevaClase={setNuevaClase}

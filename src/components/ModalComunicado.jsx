@@ -1,12 +1,31 @@
 import {useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPaperclip, faPaperPlane, faCircleXmark} from '@fortawesome/free-solid-svg-icons'
+import Error from './Error'
 
 
-const ModalComunicado = ({ comunicadoModal, setComunicadoModal }) => {
+
+const ModalComunicado = ({ comunicadoModal, setComunicadoModal, error, setError }) => {
 
     const [ titulo, setTitulo] = useState('')
     const [ comunicado, setComunicado] = useState('')
+
+    const validarComunicado = () => {
+ 
+        if(comunicado === '') { // Está vacío
+          setError(true)
+          setTimeout(() => {
+            setError(false)
+          }, 3000)
+          return;
+    
+        } else {
+            setComunicadoModal(false)
+        } 
+    
+    
+        }
+    
 
   return (
     <div className={'w-full text-slate-200 bg-slate-900 relative z-10 top-0 px-5 h-screen overflow-y-scroll pt-32 ' + (comunicadoModal ? "" : "hidden")}>
@@ -37,8 +56,9 @@ const ModalComunicado = ({ comunicadoModal, setComunicadoModal }) => {
                 value={comunicado}
                 onChange={e => setComunicado(e.target.value)}
                 placeholder='Ingresar Comunicado...' 
-                className='bg-slate-900 border-2 border-slate-800 rounded-md p-3 h-36 mt-3 outline-none focus:border-sky-500 transition-all'>
+                className='bg-slate-900 border-2 border-slate-800 rounded-md p-3 h-36 mt-3 outline-none focus:border-sky-500 transition-all mb-2'>
             </textarea>
+            {error && <Error><p>Completar comunicado</p></Error>}
         </div>
         <div className='flex w-full mt-5 items-center justify-end'>
             <div>
@@ -47,8 +67,8 @@ const ModalComunicado = ({ comunicadoModal, setComunicadoModal }) => {
             </div>
 
             <button
-                
                 className='flex rounded-full bg-sky-500 py-3 px-5'
+                onClick={validarComunicado}
                 >
                 <FontAwesomeIcon icon={faPaperPlane} className='text-slate-900 my-auto mr-2'/>
                 <p className='text-slate-900 font-bold'>Enviar</p>

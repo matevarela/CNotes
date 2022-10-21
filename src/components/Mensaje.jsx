@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 
 const Mensaje = () => {
   return (
@@ -12,4 +12,4 @@ const Mensaje = () => {
   )
 }
 
-export default Mensaje */
+export default Mensaje

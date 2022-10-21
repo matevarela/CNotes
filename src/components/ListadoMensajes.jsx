@@ -1,4 +1,4 @@
-/* import React from 'react'
+import React from 'react'
 import Mensaje from './Mensaje'
 
 const ListadoMensajes = ({mensajeTexto}) => {
@@ -15,4 +15,4 @@ const ListadoMensajes = ({mensajeTexto}) => {
   ) 
 }
 
-export default ListadoMensajes */
+export default ListadoMensajes
