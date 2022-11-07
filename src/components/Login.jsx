@@ -4,7 +4,7 @@ import 'animate.css'
 import Logo from '../img/logo.png';
 import Error from './Error';
 
-const Login = ( {setIsValid, error, setError} ) => {
+const Login = ( {setIsValid, error, setError, usuario, setUsuario} ) => {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
@@ -12,27 +12,23 @@ const handleSubmit = e => {
     e.preventDefault();
     
     // Validación del formulario
-    if([email].includes('')) {
-        console.log('El campo de Correo es obligatorio');
-    
+    if(password === '' && email !== '') {
+        setUsuario({ ...usuario, nombre: email })
+        console.log(usuario)
+        setIsValid(true);
+    } else if(password === 'profe123' && email !=='') {
+        setUsuario({ ...usuario, nombre: email })
+        console.log(usuario);
+        setIsValid(true);
+    } else {
         setError(true);
         setTimeout(() => {
             setError(false)
         }, 3000);
-        return;
-    } else {
-        setIsValid(true)
     }
 }    
 
-    // Iniciando sesión
-    const usuario = {
-        email,
-        password
-    }
-
   return (
-
     <div className='h-screen m-auto'>
         <div className='w-full max-w-xl m-auto'> 
             <img src={Logo} className='mx-auto py-10 px-5' alt="Logo" />
@@ -41,7 +37,7 @@ const handleSubmit = e => {
                 className='py-10 mx-5 bg-white shadow rounded-lg p-10'
                 onSubmit={handleSubmit}
             >
-            {error && <Error><p>El campo de Correo es obligatorio</p></Error>}
+            {error && <Error><p>El campo de Correo es obligatorio y/o Contraseña incorrecta</p></Error>}
                 <div className='my-5'>
                     <label 
                         className='uppercase text-slate-600 block text-xl font-bold'
@@ -62,7 +58,7 @@ const handleSubmit = e => {
                     <label 
                         className='uppercase text-slate-600 block text-xl font-bold'
                         htmlFor='password'
-                    >Password de Admin
+                    >Password de Profesor
                     </label>
                     <input 
                         type="password"

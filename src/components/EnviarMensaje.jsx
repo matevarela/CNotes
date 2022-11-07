@@ -8,7 +8,7 @@ const EnviarMensaje = ({ mensajeTexto, setMensajeTexto, comunicadoModal, setComu
     <div>
         <button
           onClick={() => setComunicadoModal(!comunicadoModal)}
-          className='flex items-center mx-auto  fixed bottom-2 right-2 w-auto rounded-full bg-sky-500 py-3 px-5'
+          className='flex items-center mx-auto  fixed bottom-2 right-2 w-auto rounded-full bg-sky-500 py-3 px-5 hover:cursor-pointer hover:bg-sky-600 transition-colors'
           >
           <FontAwesomeIcon icon={faEnvelope} className='text-slate-900 my-auto mr-2'/>
           <p className='text-slate-900 font-bold'>Comunicado</p>

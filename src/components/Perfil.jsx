@@ -6,7 +6,7 @@ const Perfil = ({ perfilMenu, setPerfilMenu }) => {
 
 
   return (
-    <div className={'w-full bg-slate-800 top-0 hidden' + (perfilMenu ? "hidden" : "")}>
+    <div className={'w-full bg-slate-800 top-0 hidden' + (perfilMenu ? "visible animate__animated animate__fadeInDown" : "animate__animated animate__fadeOutUp hidden")}>
         <div className='my-28'>
           <img src={PerfilFoto} alt="Foto de Perfil" className='rounded-full h-40 mx-auto border-2 p-1 border-slate-200'/>
           <h3 className='text-sky-500 font-bold text-4xl text-center mt-8 mx-5'>Dylan Santillán</h3>
@@ -26,7 +26,7 @@ const Perfil = ({ perfilMenu, setPerfilMenu }) => {
                 </div>
                 <div className='w-full bg-slate-900 rounded-lg h-64 grid grid-rows-2 border-b-8 border-sky-500'>
                   <p className='text-slate-200 font-semibold text-9xl mx-5 text-center mt-10'>10</p>
-                  <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3 text-center self-end mb-5'>MATERIAS:</h6>
+                  <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3 text-center self-end mb-5'>MATERIAS</h6>
                 </div>
                 <div className='w-full bg-slate-900 rounded-lg h-64 grid grid-rows-2 border-b-8 border-sky-500'>
                   <p className='text-slate-200 font-semibold text-9xl mx-5 text-center mt-10'>3</p>
@@ -34,7 +34,7 @@ const Perfil = ({ perfilMenu, setPerfilMenu }) => {
                 </div>
                 <div className='w-full bg-slate-900 rounded-lg h-64 grid grid-rows-2 border-b-8 border-sky-500'>
                   <p className='text-slate-200 font-semibold text-9xl mx-5 text-center mt-10'>2</p>
-                  <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3 text-center self-end mb-5'>LLAMADOS DE ATENCIÓN:</h6>
+                  <h6 className='text-slate-500 font-semibold text-2xl mx-5 mt-3 text-center self-end mb-5'>LLAMADOS DE ATENCIÓN</h6>
                 </div>           
               </div>
             </div>

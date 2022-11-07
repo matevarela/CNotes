@@ -7,8 +7,11 @@ function App() {
 
   const [isValid, setIsValid] = useState(false);
   const [chats, setChats] = useState([]);
-  const [usuario, setUsuario] = useState([]);
   const [error, setError] = useState(false);
+  const [usuario, setUsuario] = useState({
+    nombre : '',
+    profesor: false
+  });
 
 
   return (
@@ -24,12 +27,16 @@ function App() {
           setChats={setChats}
           error={error}
           setError={setError}
+          usuario={usuario}
+          setUsuario={setUsuario}
         />
       ) : (
         <Login 
           setIsValid={setIsValid}
           error={error}
           setError={setError}
+          usuario={usuario}
+          setUsuario={setUsuario}
         />
       )}
     </div>

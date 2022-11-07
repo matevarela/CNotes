@@ -3,7 +3,7 @@ import AgregarClase from './AgregarClase.jsx'
 import Chats from './Chats.jsx'
 import Grupo from './Grupo.jsx'
 
-const Principal = ({chats, setChats, error, setError}) => {
+const Principal = ({chats, setChats, error, setError, usuario, setUsuario}) => {
   const [nuevaClase, setNuevaClase] = useState(false)
 
   return (

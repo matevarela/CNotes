@@ -7,6 +7,7 @@ import Error from './Error'
 
 const ModalComunicado = ({ comunicadoModal, setComunicadoModal, error, setError }) => {
 
+
     const [ titulo, setTitulo] = useState('')
     const [ comunicado, setComunicado] = useState('')
 
@@ -23,17 +24,19 @@ const ModalComunicado = ({ comunicadoModal, setComunicadoModal, error, setError 
             setComunicadoModal(false)
         } 
     
-    
+
         }
     
 
   return (
-    <div className={'w-full text-slate-200 bg-slate-900 relative z-10 top-0 px-5 h-screen overflow-y-scroll pt-32 ' + (comunicadoModal ? "" : "hidden")}>
-
+    
+    
+    <div className={'w-full text-slate-200 bg-slate-900 relative z-10 top-0 px-5 h-screen overflow-y-scroll pt-32 ' + (comunicadoModal ? "animate__animated animate__fadeInDown" : "animate__animated animate__fadeOutUp hidden")}>
+            
         <div className='grid grid-cols-12'>
             <h3 className='text-center font-bold text-2xl text-sky-500 grid col-span-11'>Nuevo Comunicado</h3>
 
-            <button onClick={() => setComunicadoModal(false)} className="grid col-span-1">
+            <button onClick={() => setComunicadoModal(false)} className="grid col-span-1 ">
                 <FontAwesomeIcon icon={faCircleXmark} className='text-slate-400 my-auto h-10 mr-5'/>
             </button>
         </div>
@@ -67,11 +70,11 @@ const ModalComunicado = ({ comunicadoModal, setComunicadoModal, error, setError 
             </div>
 
             <button
-                className='flex rounded-full bg-sky-500 py-3 px-5'
+                className='flex rounded-full bg-sky-500 py-3 px-5 hover:cursor-pointer hover:bg-sky-600 transition-colors'
                 onClick={validarComunicado}
                 >
                 <FontAwesomeIcon icon={faPaperPlane} className='text-slate-900 my-auto mr-2'/>
-                <p className='text-slate-900 font-bold'>Enviar</p>
+                <p className='text-slate-900 font-bold '>Enviar</p>
             </button>
         </div>
     </div>

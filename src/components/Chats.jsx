@@ -8,15 +8,32 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import Buscador from './Buscador'
 import Perfil from './Perfil'
+import axios from 'axios';
+import { render } from 'react-dom'
+
+
 
 const Chats = ({setNuevaClase, chats, setChats}) => {
+  const [perfilMenu, setPerfilMenu] = useState(false);
+  const [data, setData] = useState();
+  const url = '/obtenerClases.php';
 
-  const [perfilMenu, setPerfilMenu] = useState(false)
+  fetch(url)
+    .then(respuesta => {
+      console.log(respuesta.url)
+      return respuesta.text()
+    })
+    .then( datos => {
+      console.log(datos)
+    })
+    .catch( error => {
+      console.log(error)
+    })
 
   const botonNuevaClase = () => {
-   setNuevaClase(true);
-  }
-
+    setNuevaClase(true);
+   }
+   
   return (
     <div className='w-full lg:w-1/3'>
         <div className=' w-full flex items-center justify-between p-5 shadow-md lg:w-1/3 fixed z-10 bg-slate-900'>
@@ -26,7 +43,7 @@ const Chats = ({setNuevaClase, chats, setChats}) => {
               alt="Imagen de Perfil" 
               className='h-12 rounded-full'
               onClick={() => setPerfilMenu(!perfilMenu)}
-              />
+            />
           </button>
           <img src={Logo} className="h-30" alt="Imagen de Logotipo" />
           <a 
@@ -35,15 +52,15 @@ const Chats = ({setNuevaClase, chats, setChats}) => {
             <FontAwesomeIcon icon={faPlus} className='text-slate-200'/>
           </a>
         </div>
-        <div className="h-screen overflow-y-scroll px-5 pt-24 bg-slate-800">
+        <div className="h-screen overflow-y-scroll  pt-24 bg-slate-800">
           <Perfil
           perfilMenu={perfilMenu}
           setPerfilMenu={setPerfilMenu}
           />
           <div className={(perfilMenu ? "hidden" : "")}>
           <Buscador/>
-          { chats.length > 0 ? 
-              chats.map( (chat, index) => 
+          {/* { data.length > 0 ? 
+              data.map( (chat, index) => 
                 (<Chat 
                   key={index}
                   chat={chat}
@@ -51,10 +68,12 @@ const Chats = ({setNuevaClase, chats, setChats}) => {
             ) :
               <h3 className="uppercase text-center font-bold text-2xl pt-10 text-slate-200">Acá Aparecerán tus Clases.</h3> 
               }
+       */}
+
           </div>
         </div>
     </div>
-  )
-}
+  );
+} // Component
 
 export default Chats
